@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title> Object Oriented JavaScript </title>
+</head>
+
+<body>
+<script type="text/javascript">
+var customer = {
+  name : 'Tom Smith',
+  speak : function () {
+    return 'My name is' + this.name;
+  },
+
+  address : {
+    street : 'M1 road',
+    State : 'Pittsbourgh',
+    country : "Ireland",
+  },
+};
+
+function myMethod () {
+    return this.val ;
+};
+
+var myObject = {
+  get : myMethod,
+  val : 3.122
+};
+
+var myObject2 = {
+  get: myMethod,
+  val: 5
+};
+
+var answer = {
+  get : function fn1 () {
+    return this.val;
+  },
+  val : 40
+};
+
+var answer2 = Object.create (answer);
+
+
+document.write ( myObject.get() + "<br/>");
+document.write ( myObject2.get()+ "<br/>");
+
+document.write (customer.speak() + "<br/>");
+document.write (customer.name + " lives at " + customer.address.street);
+</script>
+</body>
+</html>
